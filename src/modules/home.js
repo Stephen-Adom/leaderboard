@@ -20,7 +20,7 @@ const homeLayout = () => `
 
         <form action="">
           <div class="form-group">
-            <input type="text" required placeholder="Your name" aria-label="name" />
+            <input type="text" required name="name" placeholder="Your name" aria-label="name" />
           </div>
           <div class="form-group">
             <input
@@ -28,6 +28,7 @@ const homeLayout = () => `
               type="number"
               placeholder="Your score"
               aria-label="score"
+              name="score"
             />
           </div>
 

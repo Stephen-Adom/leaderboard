@@ -6,18 +6,25 @@ const displayAllScores = () => {
   leaderboardScore.loadScores();
   const scores = leaderboardScore.getScores();
 
+  console.log(scores, 'scores');
+
   if (scores && scores.length) {
     let html = '';
 
     scores.forEach((score) => {
       html += `
-        <li>${score.name}: ${score.score}</li>
+        <li>${score.user}: ${score.score}</li>
         `;
     });
 
     return html;
   }
-  return '';
+  return '<li>No Scores Available!!</li>';
 };
 
-export default displayAllScores;
+const renderScoresInDOM = (scoreboard) => {
+  const htmlScores = displayAllScores();
+  scoreboard.innerHTML = htmlScores;
+};
+
+export default renderScoresInDOM;

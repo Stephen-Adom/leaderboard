@@ -5,11 +5,6 @@ export default class Score {
     this.leaderBoardScores = [];
   }
 
-  createScore(name, score) {
-    this.name = name;
-    this.score = score;
-  }
-
   loadScores() {
     this.leaderBoardScores = localStorage.getItem('scores')
       ? JSON.parse(localStorage.getItem('scores'))
