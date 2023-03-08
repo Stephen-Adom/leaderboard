@@ -60,6 +60,7 @@ h2 {
   padding-left: 0;
   max-height: 290px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .scoreboard li {
