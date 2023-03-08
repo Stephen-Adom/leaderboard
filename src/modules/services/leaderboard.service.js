@@ -1,8 +1,6 @@
 class LeaderboardService {
   fetchuri;
 
-  gameId;
-
   constructor() {
     this.fetchuri = 'http://us-central1-js-capstone-backend.cloudfunctions.net/api';
   }
