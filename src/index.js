@@ -5,6 +5,7 @@ import {
   LeaderboardService,
   addScore,
   saveScores,
+  refreshScoreList,
 } from './modules';
 
 const mainContainer = document.querySelector('main');
@@ -51,12 +52,16 @@ window.addEventListener('DOMContentLoaded', () => {
   mainContainer.innerHTML = homeLayout();
   setTimeout(() => {
     const scoreboard = document.querySelector('.scoreboard');
+    const form = document.querySelector('form');
+    const refreshBtn = document.querySelector('.refresh-btn');
+
     renderScoresInDOM(scoreboard);
 
     fetchAllScores();
 
-    const form = document.querySelector('form');
     form.addEventListener('submit', addScore);
+
+    refreshBtn.addEventListener('click', refreshScoreList);
   }, 50);
 });
 
