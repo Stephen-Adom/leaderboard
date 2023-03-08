@@ -13,24 +13,7 @@ export default class Score {
   loadScores() {
     this.leaderBoardScores = localStorage.getItem('scores')
       ? JSON.parse(localStorage.getItem('scores'))
-      : [
-        {
-          name: 'Alaska',
-          score: 100,
-        },
-        {
-          name: 'James',
-          score: 130,
-        },
-        {
-          name: 'Alberta',
-          score: 30,
-        },
-        {
-          name: 'Cynthia',
-          score: 150,
-        },
-      ];
+      : [];
   }
 
   addScores(score) {

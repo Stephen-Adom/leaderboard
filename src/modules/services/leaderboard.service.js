@@ -4,7 +4,7 @@ class LeaderboardService {
 
   constructor() {
     this.fetchuri =
-      'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
+      'http://us-central1-js-capstone-backend.cloudfunctions.net/api';
   }
 
   createGame = async (appInfo) => {
@@ -20,17 +20,21 @@ class LeaderboardService {
   };
 
   fetchAllScores = async (id) => {
-    const response = await fetch(`${this.fetchuri}/games/${id}/scores/`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    try {
+      const response = await fetch(`${this.fetchuri}/games/${id}/scores`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-    return response.json();
+      return response;
+    } catch (error) {
+      return error;
+    }
   };
 
-  fetchAllScores = async (id, score) => {
+  saveScore = async (id, score) => {
     try {
       return await fetch(`${this.fetchuri}/games/${id}/scores/`, {
         method: 'POST',
