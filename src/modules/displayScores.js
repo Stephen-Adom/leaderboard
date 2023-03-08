@@ -6,8 +6,6 @@ const displayAllScores = () => {
   leaderboardScore.loadScores();
   const scores = leaderboardScore.getScores();
 
-  console.log(scores, 'scores');
-
   if (scores && scores.length) {
     let html = '';
 
