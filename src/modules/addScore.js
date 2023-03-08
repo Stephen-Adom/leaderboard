@@ -4,18 +4,18 @@ import renderScoresInDOM from './displayScores.js';
 
 const leaderboardservice = new LeaderboardService();
 
-const addScore = (event) => {
-  const scoreObj = new Score();
-  scoreObj.loadScores();
+const saveScores = (scores) => {
+  const scoreboard = document.querySelector('.scoreboard');
+  localStorage.setItem('scores', JSON.stringify(scores.result));
+  renderScoresInDOM(scoreboard);
+};
 
-  event.preventDefault();
-  const user = event.target[0].value.trim();
-  const score = event.target[1].value;
-  saveNewScoreInDb({
-    user,
-    score: Number(score),
-  });
-  event.target.reset();
+const updateScoreList = async () => {
+  leaderboardservice
+    .fetchAllScores(localStorage.getItem('gameId'))
+    .then((response) => {
+      saveScores(response);
+    });
 };
 
 const saveNewScoreInDb = (data) => {
@@ -28,18 +28,18 @@ const saveNewScoreInDb = (data) => {
     });
 };
 
-const updateScoreList = async () => {
-  leaderboardservice
-    .fetchAllScores(localStorage.getItem('gameId'))
-    .then((response) => {
-      saveScores(response);
-    });
-};
+const addScore = (event) => {
+  const scoreObj = new Score();
+  scoreObj.loadScores();
 
-const saveScores = (scores) => {
-  const scoreboard = document.querySelector('.scoreboard');
-  localStorage.setItem('scores', JSON.stringify(scores.result));
-  renderScoresInDOM(scoreboard);
+  event.preventDefault();
+  const user = event.target[0].value.trim();
+  const score = event.target[1].value;
+  saveNewScoreInDb({
+    user,
+    score: Number(score),
+  });
+  event.target.reset();
 };
 
 export { addScore, saveScores };

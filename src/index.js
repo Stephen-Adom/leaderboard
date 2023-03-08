@@ -11,40 +11,33 @@ import {
 const mainContainer = document.querySelector('main');
 const leaderboardservice = new LeaderboardService();
 
-const initialiseGame = () => {
-  return new Promise((resolve, reject) => {
-    if (localStorage.getItem('gameId')) {
-      resolve(localStorage.getItem('gameId'));
-    } else {
-      leaderboardservice
-        .createGame({
-          name: 'Alaska Game',
-        })
-        .then((response) => {
-          if (response && response.result) {
-            const { result } = response;
-            localStorage.setItem('gameId', result.split(' ')[3]);
-            resolve(localStorage.getItem('gameId'));
-          } else {
-            reject('error has occured');
-          }
-        });
-    }
-  });
-};
+const initialiseGame = () => new Promise((resolve, reject) => {
+  if (localStorage.getItem('gameId')) {
+    resolve(localStorage.getItem('gameId'));
+  } else {
+    leaderboardservice
+      .createGame({
+        name: 'Alaska Game',
+      })
+      .then((response) => {
+        if (response && response.result) {
+          const { result } = response;
+          localStorage.setItem('gameId', result.split(' ')[3]);
+          resolve(localStorage.getItem('gameId'));
+        } else {
+          reject();
+        }
+      });
+  }
+});
 
 const fetchAllScores = () => {
   initialiseGame()
-    .then((gameid) => {
-      return leaderboardservice.fetchAllScores(gameid);
-    })
+    .then((gameid) => leaderboardservice.fetchAllScores(gameid))
     .then((response) => {
       if (response) {
         saveScores(response);
       }
-    })
-    .catch((error) => {
-      console.log(error);
     });
 };
 
