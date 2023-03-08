@@ -1,11 +1,10 @@
-import fetch from 'node-fetch';
-
 class LeaderboardService {
   fetchuri;
+  gameId;
 
   constructor() {
     this.fetchuri =
-      'http://us-central1-js-capstone-backend.cloudfunctions.net/api';
+      'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
   }
 
   createGame = async (appInfo) => {
@@ -32,15 +31,25 @@ class LeaderboardService {
   };
 
   fetchAllScores = async (id, score) => {
-    const response = await fetch(`${this.fetchuri}/games/${id}/scores/`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(score),
-    });
+    try {
+      return await fetch(`${this.fetchuri}/games/${id}/scores/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(score),
+      });
+    } catch (error) {
+      return error;
+    }
+  };
 
-    return response.json();
+  saveGameID = (id) => {
+    this.gameId = id;
+  };
+
+  getGameID = () => {
+    return this.gameId ? this.gameId : null;
   };
 }
 
