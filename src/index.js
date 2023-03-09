@@ -1,4 +1,6 @@
 import './styles.css';
+import marioKart from './assets/mario-kart.jpg';
+
 import {
   homeLayout,
   renderScoresInDOM,
@@ -6,30 +8,32 @@ import {
   addScore,
   saveScores,
   refreshScoreList,
+  successAlert,
 } from './modules';
 
 const mainContainer = document.querySelector('main');
 const leaderboardservice = new LeaderboardService();
 
-const initialiseGame = () => new Promise((resolve, reject) => {
-  if (localStorage.getItem('gameId')) {
-    resolve(localStorage.getItem('gameId'));
-  } else {
-    leaderboardservice
-      .createGame({
-        name: 'Alaska Game',
-      })
-      .then((response) => {
-        if (response && response.result) {
-          const { result } = response;
-          localStorage.setItem('gameId', result.split(' ')[3]);
-          resolve(localStorage.getItem('gameId'));
-        } else {
-          reject();
-        }
-      });
-  }
-});
+const initialiseGame = () =>
+  new Promise((resolve, reject) => {
+    if (localStorage.getItem('gameId')) {
+      resolve(localStorage.getItem('gameId'));
+    } else {
+      leaderboardservice
+        .createGame({
+          name: 'Alaska Game',
+        })
+        .then((response) => {
+          if (response && response.result) {
+            const { result } = response;
+            localStorage.setItem('gameId', result.split(' ')[3]);
+            resolve(localStorage.getItem('gameId'));
+          } else {
+            reject();
+          }
+        });
+    }
+  });
 
 const fetchAllScores = () => {
   initialiseGame()
@@ -42,15 +46,19 @@ const fetchAllScores = () => {
 };
 
 window.addEventListener('DOMContentLoaded', () => {
-  // mainContainer.innerHTML = homeLayout();
+  mainContainer.innerHTML = homeLayout();
+  successAlert();
   setTimeout(() => {
     const scoreboard = document.querySelector('.scoreboard');
     const form = document.querySelector('form');
     const refreshBtn = document.querySelector('.refresh-btn');
+    const appIconImage = document.querySelector('.app_icon');
+
+    appIconImage.setAttribute('src', marioKart);
 
     renderScoresInDOM(scoreboard);
 
-    // fetchAllScores();
+    fetchAllScores();
 
     form.addEventListener('submit', addScore);
 
