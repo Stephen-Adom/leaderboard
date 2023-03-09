@@ -6,7 +6,7 @@ const leaderboardScore = new Score();
 const sortByScores = (scores) => scores.sort((a, b) => b.score - a.score);
 
 const renderTopScores = (scores) => {
-  if (scores.length > 3) {
+  if (scores.length > 2) {
     return topScores(scores);
   }
 
@@ -26,7 +26,7 @@ const displayAllScores = () => {
         `;
     });
 
-    const topScores = scores.length > 3 ? renderTopScores(scores) : '';
+    const topScores = scores.length > 2 ? renderTopScores(scores) : '';
 
     return {
       listhtml: html,

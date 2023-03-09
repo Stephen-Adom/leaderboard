@@ -25,7 +25,7 @@ const saveNewScoreInDb = (data) => {
     .then((response) => {
       if (response.result) {
         updateScoreList();
-        successAlert();
+        successAlert('Leaderboard score created Successfully');
       }
     });
 };

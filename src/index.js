@@ -14,26 +14,25 @@ import {
 const mainContainer = document.querySelector('main');
 const leaderboardservice = new LeaderboardService();
 
-const initialiseGame = () =>
-  new Promise((resolve, reject) => {
-    if (localStorage.getItem('gameId')) {
-      resolve(localStorage.getItem('gameId'));
-    } else {
-      leaderboardservice
-        .createGame({
-          name: 'Alaska Game',
-        })
-        .then((response) => {
-          if (response && response.result) {
-            const { result } = response;
-            localStorage.setItem('gameId', result.split(' ')[3]);
-            resolve(localStorage.getItem('gameId'));
-          } else {
-            reject();
-          }
-        });
-    }
-  });
+const initialiseGame = () => new Promise((resolve, reject) => {
+  if (localStorage.getItem('gameId')) {
+    resolve(localStorage.getItem('gameId'));
+  } else {
+    leaderboardservice
+      .createGame({
+        name: 'Alaska Game',
+      })
+      .then((response) => {
+        if (response && response.result) {
+          const { result } = response;
+          localStorage.setItem('gameId', result.split(' ')[3]);
+          resolve(localStorage.getItem('gameId'));
+        } else {
+          reject();
+        }
+      });
+  }
+});
 
 const fetchAllScores = () => {
   initialiseGame()
