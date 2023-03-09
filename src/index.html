@@ -19,7 +19,19 @@
   </head>
   <body>
     <main>
-      <h1>Leaderboard</h1>
+      <div
+        class="app-header d-flex align-items-center justify-content-center flex-row"
+      >
+        <img
+          src="./assets/Mario_mario_kart_8_deluxe.webp"
+          width="30%"
+          alt="mario-kart"
+        />
+        <div>
+          <h1 class="mb-1 fw-extrabold">Leaderboard</h1>
+          <h5 class="fst-italic text-muted">Mario Kart Game</h5>
+        </div>
+      </div>
 
       <div
         class="top-score-board d-flex align-items-center justify-content-center gap-5 mb-4 mt-5"
@@ -69,12 +81,19 @@
         <div class="recent-scores">
           <div class="recent-scores-header">
             <h2>Recent scores</h2>
-            <button type="button" class="refresh-btn default-btn">
+            <button
+              type="button"
+              class="refresh-btn default-btn btn btn-outline-secondary"
+            >
               Refresh
             </button>
           </div>
 
-          <ul class="scoreboard"></ul>
+          <div class="card mt-3">
+            <div class="card-body p-0">
+              <ul class="scoreboard"></ul>
+            </div>
+          </div>
         </div>
 
         <!-- <div class="add-score-section">
