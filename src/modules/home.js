@@ -19,47 +19,9 @@ class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-
 </div>
 
 <div
-  class="top-score-board d-flex align-items-center justify-content-center gap-5 mb-4 mt-5"
+class="top-score-board d-flex align-items-center justify-content-center gap-5 mb-4 mt-5"
 >
-  <div
-    class="second-place placement d-flex flex-column justify-content-center"
-  >
-    <div class="profile-container position-relative">
-      <span class="position-absolute badge rounded-circle bg-primary">
-        2
-      </span>
-    </div>
-    <div class="user-info text-center mt-4">
-      <h6 class="mb-0 fw-bold">Devon Lane</h6>
-      <span class="d-block fst-italic text-muted text-muted"
-        >Score: 30</span
-      >
-    </div>
-  </div>
 
-  <div class="first-place placement">
-    <div class="profile-container position-relative">
-      <span class="position-absolute badge rounded-circle bg-success">
-        1
-      </span>
-    </div>
-    <div class="user-info text-center mt-4">
-      <h6 class="mb-0 fw-bold">Esther</h6>
-      <span class="d-block fst-italic text-muted">Score: 100</span>
-    </div>
-  </div>
-
-  <div class="third-place placement">
-    <div class="profile-container position-relative">
-      <span class="position-absolute badge rounded-circle bg-warning">
-        3
-      </span>
-    </div>
-    <div class="user-info text-center mt-4">
-      <h6 class="mb-0 fw-bold">Guy</h6>
-      <span class="d-block fst-italic text-muted">Score: 30</span>
-    </div>
-  </div>
 </div>
 </section>
 

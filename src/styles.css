@@ -111,7 +111,7 @@ h2 {
 }
 
 .scoreboard li:nth-child(even) {
-  background-color: #dfdfdf;
+  background-color: #f7f7f7;
 }
 
 .add-score-section {
