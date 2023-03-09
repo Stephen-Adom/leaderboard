@@ -62,7 +62,7 @@ The leaderboard website displays scores submitted by different players. It also 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Here is the link to the live demo version - [Mario Kart Leaderboard](https://leaderboard-gwo4wc0n4-stephen-adom.vercel.app/)
+- Here is the link to the live demo version - [Mario Kart Leaderboard](https://leaderboard-smoky.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
