@@ -42,7 +42,7 @@ const fetchAllScores = () => {
 };
 
 window.addEventListener('DOMContentLoaded', () => {
-  mainContainer.innerHTML = homeLayout();
+  // mainContainer.innerHTML = homeLayout();
   setTimeout(() => {
     const scoreboard = document.querySelector('.scoreboard');
     const form = document.querySelector('form');
@@ -50,7 +50,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     renderScoresInDOM(scoreboard);
 
-    fetchAllScores();
+    // fetchAllScores();
 
     form.addEventListener('submit', addScore);
 
