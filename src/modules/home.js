@@ -128,7 +128,7 @@ class="d-flex align-items-center flex-column flex-sm-column flex-md-column flex-
 <button
 type="button"
 data-bs-toggle="modal"
-data-bs-target="#exampleModal"
+data-bs-target="#addScoreModal"
 class="btn btn-primary position-absolute mobile-add-btn d-flex align-items-center justify-content-center d-block d-sm-block d-md-block d-lg-none d-xl-none"
 >
 <svg
@@ -150,26 +150,26 @@ class="btn btn-primary position-absolute mobile-add-btn d-flex align-items-cente
 <!-- Modal -->
 <div
 class="modal fade"
-id="exampleModal"
+id="addScoreModal"
 tabindex="-1"
-aria-labelledby="exampleModalLabel"
+aria-labelledby="addScoreModal"
 aria-hidden="true"
 >
 <div class="modal-dialog">
   <div class="modal-content">
-    <div class="modal-header">
-      <h1 class="modal-title fs-5" id="exampleModalLabel">
-        Add your score
-      </h1>
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="modal"
-        aria-label="Close"
-      ></button>
-    </div>
-    <div class="modal-body">
-      <form action="">
+    <form action="">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Add your score
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
         <div class="form-group">
           <label for="name" class="form-label">Name</label>
           <input
@@ -194,18 +194,18 @@ aria-hidden="true"
             class="form-control"
           />
         </div>
-      </form>
-    </div>
-    <div class="modal-footer">
-      <button
-        type="button"
-        class="btn btn-secondary"
-        data-bs-dismiss="modal"
-      >
-        Close
-      </button>
-      <button type="button" class="btn btn-primary">Submit</button>
-    </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary close-dialog"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
   </div>
 </div>
 </div>

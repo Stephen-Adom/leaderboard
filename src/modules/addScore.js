@@ -1,6 +1,7 @@
 import Score from './score.model.js';
 import LeaderboardService from './services/leaderboard.service.js';
 import renderScoresInDOM from './displayScores.js';
+import successAlert from './alert.js';
 
 const leaderboardservice = new LeaderboardService();
 
@@ -24,6 +25,7 @@ const saveNewScoreInDb = (data) => {
     .then((response) => {
       if (response.result) {
         updateScoreList();
+        successAlert();
       }
     });
 };
@@ -42,4 +44,21 @@ const addScore = (event) => {
   event.target.reset();
 };
 
-export { addScore, saveScores };
+const addMobileScreenScore = (event) => {
+  event.preventDefault();
+  const closeDialogBtn = document.querySelector('.close-dialog');
+
+  const scoreObj = new Score();
+  scoreObj.loadScores();
+
+  const user = event.target[1].value.trim();
+  const score = event.target[2].value;
+  saveNewScoreInDb({
+    user,
+    score: Number(score),
+  });
+  event.target.reset();
+  closeDialogBtn.click();
+};
+
+export { addScore, saveScores, addMobileScreenScore };

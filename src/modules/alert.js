@@ -15,7 +15,7 @@ const Toast = Swal.mixin({
 const successAlert = () => {
   Toast.fire({
     icon: 'success',
-    title: 'Signed in successfully',
+    title: 'Leaderboard score created Successfully',
   });
 };
 

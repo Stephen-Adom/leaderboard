@@ -7,8 +7,8 @@ import {
   LeaderboardService,
   addScore,
   saveScores,
+  addMobileScreenScore,
   refreshScoreList,
-  successAlert,
 } from './modules';
 
 const mainContainer = document.querySelector('main');
@@ -47,12 +47,12 @@ const fetchAllScores = () => {
 
 window.addEventListener('DOMContentLoaded', () => {
   mainContainer.innerHTML = homeLayout();
-  successAlert();
   setTimeout(() => {
     const scoreboard = document.querySelector('.scoreboard');
     const form = document.querySelector('form');
     const refreshBtn = document.querySelector('.refresh-btn');
     const appIconImage = document.querySelector('.app_icon');
+    const modalAddForm = document.querySelector('.modal-content form');
 
     appIconImage.setAttribute('src', marioKart);
 
@@ -63,5 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', addScore);
 
     refreshBtn.addEventListener('click', refreshScoreList);
+
+    modalAddForm.addEventListener('submit', addMobileScreenScore);
   }, 50);
 });
