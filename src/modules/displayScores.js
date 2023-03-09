@@ -2,9 +2,11 @@ import Score from './score.model.js';
 
 const leaderboardScore = new Score();
 
+const sortByScores = (scores) => scores.sort((a, b) => b.score - a.score);
+
 const displayAllScores = () => {
   leaderboardScore.loadScores();
-  const scores = leaderboardScore.getScores();
+  const scores = sortByScores(leaderboardScore.getScores());
 
   if (scores && scores.length) {
     let html = '';
