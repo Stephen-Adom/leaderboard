@@ -2,7 +2,7 @@ class LeaderboardService {
   fetchuri;
 
   constructor() {
-    this.fetchuri = 'http://us-central1-js-capstone-backend.cloudfunctions.net/api';
+    this.fetchuri = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
   }
 
   createGame = async (appInfo) => {
