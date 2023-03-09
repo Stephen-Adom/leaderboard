@@ -9,6 +9,7 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+  - [🛠 Screenshots](#screenshots)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -30,6 +31,11 @@
 # 📖 [Leaderboard] <a name="about-project"></a>
 
 The leaderboard website displays scores submitted by different players. It also allows you to submit your score. A full responsive website developed using webpack and ES6 Syntax
+
+## 🛠 Screenshots <a name="screenshots"></a>
+
+- [Desktop Screen]('./screenshots/desktop.PNG)
+- [Mobile Screen]('./screenshots/mobile.png)
 
 ## 🛠 Built With <a name="built-with"></a>
 
