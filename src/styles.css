@@ -37,6 +37,46 @@ h2 {
   cursor: pointer;
 }
 
+.profile-container {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: grey;
+  outline-offset: 5px;
+  background-image: url('./assets/default.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.first-place {
+  transform: translateY(-30px);
+}
+
+.first-place .profile-container {
+  outline: 4px solid #198754;
+}
+
+.second-place .profile-container {
+  outline: 4px solid #0a58ca;
+}
+
+.third-place .profile-container {
+  outline: 4px solid #cc9a06;
+}
+
+.badge {
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
 .leaderboard-container {
   width: 100%;
   display: flex;
