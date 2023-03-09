@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h3><b>Leaderboard</b></h3>
+  <h1><b>Leaderboard</b></h1>
 
 </div>
 
