@@ -57,5 +57,3 @@ window.addEventListener('DOMContentLoaded', () => {
     refreshBtn.addEventListener('click', refreshScoreList);
   }, 50);
 });
-
-export default leaderboardservice;
