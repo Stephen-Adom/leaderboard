@@ -1,10 +1,13 @@
 import './styles.css';
+import marioKart from './assets/mario-kart.jpg';
+
 import {
   homeLayout,
   renderScoresInDOM,
   LeaderboardService,
   addScore,
   saveScores,
+  addMobileScreenScore,
   refreshScoreList,
 } from './modules';
 
@@ -47,6 +50,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const scoreboard = document.querySelector('.scoreboard');
     const form = document.querySelector('form');
     const refreshBtn = document.querySelector('.refresh-btn');
+    const appIconImage = document.querySelector('.app_icon');
+    const modalAddForm = document.querySelector('.modal-content form');
+
+    appIconImage.setAttribute('src', marioKart);
 
     renderScoresInDOM(scoreboard);
 
@@ -55,5 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', addScore);
 
     refreshBtn.addEventListener('click', refreshScoreList);
+
+    modalAddForm.addEventListener('submit', addMobileScreenScore);
   }, 50);
 });

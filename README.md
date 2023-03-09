@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h3><b>Leaderboard</b></h3>
+  <h1><b>Leaderboard</b></h1>
 
 </div>
 
@@ -12,13 +12,11 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
@@ -40,6 +38,7 @@ The leaderboard website displays scores submitted by different players. It also 
 - **Html 5**
 - **CSS 3**
 - **Webpack 5**
+- **Bootstrap 5**
 
 <!-- Features -->
 
@@ -48,16 +47,11 @@ The leaderboard website displays scores submitted by different players. It also 
 - **Add Score**
 - **List All Scores**
 - **Refresh Scores**
+- **Top Score Board**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- Here is the link to the live demo version
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -111,18 +105,6 @@ To run the project, execute the following command:
 
 -
 
-### Run tests
-
-To run tests, run the following command:
-
-Example command:
-
-```sh
-  npm run test
-```
-
--
-
 ### Deployment
 
 You can deploy this project using:
@@ -139,8 +121,6 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
-
 👤 **Stephen Addae**
 
 - GitHub: [@Stephen-Adom](https://github.com/Stephen-Adom)
@@ -152,8 +132,6 @@ Example:
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
 
 - [ ] **Authentication**
 
@@ -173,7 +151,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project...
+If you like this project please give me a star⭐
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

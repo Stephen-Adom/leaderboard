@@ -5,10 +5,12 @@ module.exports = {
   mode: 'development',
   entry: {
     index: path.resolve(__dirname, 'src', 'index.js'),
+    sweetalert: 'sweetalert2',
   },
   output: {
-    filename: 'main.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'assets/[hash][ext][query]',
     clean: true,
   },
   plugins: [
@@ -23,6 +25,18 @@ module.exports = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
         include: path.resolve(__dirname, 'src'),
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: ['file-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },

@@ -1,10 +1,21 @@
 import Score from './score.model.js';
+import topScores from './topScores.js';
 
 const leaderboardScore = new Score();
 
+const sortByScores = (scores) => scores.sort((a, b) => b.score - a.score);
+
+const renderTopScores = (scores) => {
+  if (scores.length > 2) {
+    return topScores(scores);
+  }
+
+  return '';
+};
+
 const displayAllScores = () => {
   leaderboardScore.loadScores();
-  const scores = leaderboardScore.getScores();
+  const scores = sortByScores(leaderboardScore.getScores());
 
   if (scores && scores.length) {
     let html = '';
@@ -15,14 +26,27 @@ const displayAllScores = () => {
         `;
     });
 
-    return html;
+    const topScores = scores.length > 2 ? renderTopScores(scores) : '';
+
+    return {
+      listhtml: html,
+      topScores,
+    };
   }
-  return '<li>No Scores Available!!</li>';
+  return {
+    listhtml: '<li>No Scores Available!!</li>',
+    topScores: '',
+  };
 };
 
 const renderScoresInDOM = (scoreboard) => {
-  const htmlScores = displayAllScores();
-  scoreboard.innerHTML = htmlScores;
+  const topScoreBoard = document.querySelector('.top-score-board');
+  const { listhtml, topScores } = displayAllScores();
+
+  scoreboard.innerHTML = listhtml;
+  if (topScoreBoard) {
+    topScoreBoard.innerHTML = topScores || '';
+  }
 };
 
 export default renderScoresInDOM;
