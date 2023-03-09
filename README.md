@@ -34,8 +34,8 @@ The leaderboard website displays scores submitted by different players. It also 
 
 ## 🛠 Screenshots <a name="screenshots"></a>
 
-- [Desktop Screen]('./screenshots/desktop.PNG)
-- [Mobile Screen]('./screenshots/mobile.png)
+- <img src="./screenshots/desktop.PNG" width="70%" alt="desktop screen" />
+- <img src="./screenshots/mobile.png" width="30%" alt="mobile screen" />
 
 ## 🛠 Built With <a name="built-with"></a>
 
