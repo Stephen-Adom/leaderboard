@@ -40,6 +40,7 @@ The leaderboard website displays scores submitted by different players. It also 
 - **Html 5**
 - **CSS 3**
 - **Webpack 5**
+- **Bootstrap 5**
 
 <!-- Features -->
 
@@ -48,6 +49,7 @@ The leaderboard website displays scores submitted by different players. It also 
 - **Add Score**
 - **List All Scores**
 - **Refresh Scores**
+- **Top Score Board**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
